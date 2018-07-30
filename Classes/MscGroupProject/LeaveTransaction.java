@@ -18,15 +18,14 @@ public class LeaveTransaction extends HumanResource implements IEmployee {
     private Date endDate;
     private int noOfDaysRequired;
     private String notes;
-
+private int empId;
     @Override
     public int getEmpId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return this.empId;
     }
-
     @Override
     public void setEmpId(int empId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.empId = empId;
     }
 
     /**
