@@ -5,17 +5,26 @@
  */
 package MscGroupProject;
 
+import GUI.HRApp;
+
 /**
  *
  * @author husseinzahran
  */
 public class Main {
 
+    public static EmployeeList employeeList;
+
+    /**
+     *
+     */
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        employeeList = new EmployeeList();
+        new HRApp().setVisible(true);
     }
     
 }

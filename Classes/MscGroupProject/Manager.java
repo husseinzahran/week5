@@ -15,6 +15,16 @@ public class Manager extends Employee {
     private boolean isManager;
     private List<Employee> employees;
     
+    public Manager(){
+        
+    }
+    
+     public Manager(int employeeId,String firstName, String lastName, String nationality, String email, String department, String designation) {
+         //construct manager from super class
+         super(employeeId, firstName,  lastName,  nationality,  email,  department,  designation);
+         isManager = true;
+         
+     }
     /**
      * @return the isManager
      */

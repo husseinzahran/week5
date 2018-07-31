@@ -11,25 +11,30 @@ import java.util.Date;
  *
  * @author Administrator
  */
-public class Employee extends HumanResource {
+public class Employee extends HumanResource implements Comparable<Employee>{
 
     private String firstName;
-    private String middleName;
     private String lastName;
     private String nationality;
     private String email;
     private String department;
     private String designation;
-    private Gender gender;
-    private MaritalStatus maritalStatus;
-    private Date dateOfBirth;
-    private Date employmentDate;
-    private Date confirmationDate;
-    private Date lastPromotionDate;
+    
 
     public Employee() {
 
     }
+    
+    public Employee(int employeeId,String firstName, String lastName, String nationality, String email, String department, String designation) {
+        this.setId(employeeId);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.nationality = nationality;
+        this.email = email;
+        this.department = department;
+        this.designation = designation;
+    }
+   
 
     /**
      * @return the firstName
@@ -45,20 +50,7 @@ public class Employee extends HumanResource {
         this.firstName = firstName;
     }
 
-    /**
-     * @return the middleName
-     */
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    /**
-     * @param middleName the middleName to set
-     */
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
+    
     /**
      * @return the lastName
      */
@@ -129,88 +121,14 @@ public class Employee extends HumanResource {
         this.designation = designation;
     }
 
-    /**
-     * @return the gender
-     */
-    public Gender getGender() {
-        return gender;
-    }
-
-    /**
-     * @param gender the gender to set
-     */
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    /**
-     * @return the maritalStatus
-     */
-    public MaritalStatus getMaritalStatus() {
-        return maritalStatus;
-    }
-
-    /**
-     * @param maritalStatus the maritalStatus to set
-     */
-    public void setMaritalStatus(MaritalStatus maritalStatus) {
-        this.maritalStatus = maritalStatus;
-    }
-
-    /**
-     * @return the dateOfBirth
-     */
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    /**
-     * @param dateOfBirth the dateOfBirth to set
-     */
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    /**
-     * @return the employmentDate
-     */
-    public Date getEmploymentDate() {
-        return employmentDate;
-    }
-
-    /**
-     * @param employmentDate the employmentDate to set
-     */
-    public void setEmploymentDate(Date employmentDate) {
-        this.employmentDate = employmentDate;
-    }
-
-    /**
-     * @return the confirmationDate
-     */
-    public Date getConfirmationDate() {
-        return confirmationDate;
-    }
-
-    /**
-     * @param confirmationDate the confirmationDate to set
-     */
-    public void setConfirmationDate(Date confirmationDate) {
-        this.confirmationDate = confirmationDate;
-    }
-
-    /**
-     * @return the lastPromotionDate
-     */
-    public Date getLastPromotionDate() {
-        return lastPromotionDate;
-    }
-
-    /**
-     * @param lastPromotionDate the lastPromotionDate to set
-     */
-    public void setLastPromotionDate(Date lastPromotionDate) {
-        this.lastPromotionDate = lastPromotionDate;
+    @Override
+    public int compareTo(Employee e) {
+         if (this.getId() == e.getId()) {
+             return 0;
+         } else if (this.getId() < e.getId()) {
+             return -1;
+         }
+         return 1;
     }
 
 }
