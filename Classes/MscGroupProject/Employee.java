@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package MscGroupProject;
-
+//import the utilities from Java
 import java.util.Date;
 
 /**
  *
- * @author Administrator
+ * @Group work
  */
+
+//Inheritance demonstration
 public class Employee extends HumanResource implements Comparable<Employee>{
 
     private String firstName;
@@ -131,6 +133,6 @@ public class Employee extends HumanResource implements Comparable<Employee>{
          return 1;
     }
 
-}
+}//end class employee
 
 
